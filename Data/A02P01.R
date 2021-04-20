@@ -1,0 +1,12 @@
+#2-1-5
+library(readr)
+library(magrittr)
+b01 <- read_csv("A02L01.csv")
+b02 <- table( b01$study, b01$result) 
+prop.table( b02 ) 
+prop.table( b02, 1)
+prop.table( b02, 2) 
+addmargins(b02 )
+addmargins(b02, 1)
+addmargins(b02, 2)
+table(b01[,1:2] ) %>%  prop.table() %>% addmargins()
